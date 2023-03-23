@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+</head>
+
+<body class="page">
+    <header class="header">
+        <img src="<%=require('./images/logo.svg')%>" alt="Логотип" class="header__logo"> 
+    </header>
+    <main class="content">
+        <section class="profile">
+            <img src="<%=require('./images/kusto.jpg')%>" alt="Кусто" class="profile__avatar">
+            <div class="profile__info">
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                <button type="button" aria-label="Кнопка" class="profile__edit">
+                </button>
+                <p class="profile__job">Исследователь океана</p>
+            </div>
+            <button type="button" aria-label="Кнопка плюс" class="profile__button"></button>
+        </section>
+        <section class="elements"></section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copy">&copy;&nbsp;2022 Mesto Russia</p>
+    </footer>
+
+    <!-- Место для попапа -->
+    <!-- Попап редактирования профиля -->
+    <div class="popup popup_type_profile">
+        <div class="popup__container">
+            <button type="button" aria-label="Кнопка закрыть попап" class="popup__close-button"></button>
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <form name="edit-form" class="popup-edit-form popup__form" novalidate>
+                <input type="text" name="popup__name" placeholder="Ваше имя" minlength="2" maxlength="40" required
+                    class="popup__input popup__input_type_name" id="input-edit-name">
+                <span id="input-edit-name-error" class="popup__error"></span>
+                <input type="text" name="popup__job" placeholder="Ваша профессия" minlength="2" maxlength="200" required
+                    class="popup__input popup__input_type_job" id="input-edit-job">
+                <span id="input-edit-job-error" class="popup__error"></span>
+                <button type="submit" class="popup__submit-button popup__button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <!-- Попап добавления карточки -->
+    <div class="popup popup_type_add-card">
+        <div class="popup__container">
+            <button type="button" aria-label="Кнопка закрыть попап" class="popup__close-button"></button>
+            <h3 class="popup__title">Новое место</h3>
+            <form name="add-form" class="popup__form popup-add-form" novalidate>
+                <input type="text" name="popup__input_type_place" placeholder="Название" minlength="2" maxlength="30"
+                    required class="popup__input popup__input_type_place" id="input-add-place">
+                <span id="input-add-place-error" class="popup__error"></span>
+                <input type="url" name="popup__link" placeholder="Ссылка на картинку"
+                    class="popup__input popup__input_type_link" id="input-edit-link" required>
+                <span id="input-edit-link-error" class="popup__error"></span><!--popup__error_visible--->
+                <button type="submit" class="popup__button popup__create-button">Создать</button>
+            </form>
+        </div>
+    </div>
+    <!-- Попап большой картинки-->
+    <div id="popup-big-picture" class="popup popup_type_big-picture">
+        <div class="popup-image-container">
+            <button type="button" aria-label="Кнопка закрыть попап" class="popup__close-button"></button>
+            <img class="popup__image" alt=" ">
+            <figcaption class="popup-image-heading"></figcaption>
+        </div>
+    </div>
+
+    <!--Попап удаления картинки-->
+    <div class="popup popup_type_delete-picture">
+        <div class="popup__container">
+            <!-- <form class="popup__form popup-delete-form"> -->
+            <button type="button" aria-label="Кнопка закрыть попап" class="popup__close-button"></button>
+            <h3 class="popup__title">Вы уверены?</h3>
+            <button type="submit" class="popup__button popup__delete-button">Да</button>
+            <!-- </form> -->
+        </div>
+    </div>
+
+    <!--Попап смены аватара-->
+    <div class="popup popup_type_change-avatar">
+        <div class="popup__container">
+            <!-- <form class="popup__form popup-change-avatar-form"> -->
+            <button type="button" aria-label="Кнопка закрыть попап" class="popup__close-button"></button>
+            <h3 class="popup__title">Обновить аватар</h3>
+            <input type="url" name="popup__link" placeholder="Ссылка на картинку"
+                class="popup__input popup__input_type_avatar" id="input-change-avatar" required>
+            <span id="input-change-avatar-error" class="popup__error"></span>
+            <button type="submit" class="popup__button popup__delete-button">Сохранить</button>
+            <!-- </form> -->
+        </div>
+    </div>
+
+    <!-- Темплейт-->
+    <template class="card__template">
+        <article class="element">
+            <button type="button" aria-label="Кнопка удалить" class="element__delete-button"></button>
+            <img class="element__image" src="#" alt="#">
+            <div class="element__vector-like">
+                <h2 class="element__caption"></h2>
+                <button type="button" aria-label="Кнопка лайк" class="element__like"></button>
+            </div>
+        </article>
+    </template>
+
+    <script type="module" src="./scripts/index.js"></script>
+
+</body>
+
+</html>
