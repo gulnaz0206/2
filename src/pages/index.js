@@ -1,5 +1,5 @@
 import '../pages/index.css';
-import { initialCards, enableValidation } from './data.js';
+import { initialCards, enableValidation } from '../utils/data.js';
 import { Card }  from './Card.js';
 import { FormValidator } from './FormValidator.js';
 import Section from './Section.js';
