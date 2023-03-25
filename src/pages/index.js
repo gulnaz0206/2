@@ -6,6 +6,7 @@ import Section from './Section.js';
 import { PopupWithImage } from './PopupWithImage.js';
 import { PopupWithForm } from './PopupWithForm.js';
 import { UserInfo } from './UserInfo.js';
+import { validatorConfig } from '../utils/constants.js';
 
 //Попап редактирования профиля
 const popupOpenButtonElement = document.querySelector('.profile__edit');//кнопка открытия попапа ручка
@@ -21,8 +22,8 @@ const popupAddCardForm = document.querySelector('.popup-add-form');//форма 
 const popupWithImage = new PopupWithImage('#popup-big-picture');
 popupWithImage.setEventListeners();
 
-const createCard = (CardData) => {
-    return new Card(CardData, popupWithImage.open).createCard();
+const createCard = (cardData) => {
+    return new Card(cardData, '.card__template', popupWithImage.open).createCard();
 }
 
 function submitProfileInfo(data) {
@@ -65,15 +66,6 @@ popupOpenAddCardElement.addEventListener('click', function () {
 })
 
 /* form validation init */
-const validatorConfig = {
-        formSelector: '.popup__form',
-        inputSelector: '.popup__input',
-        submitButtonSelector: '.popup__button',
-        inactiveButtonClass: 'popup__button_disabled',
-        inputErrorClass: 'popup__input_type_error',
-        errorClass: 'popup__error_visible',
-    }
-
 const addCardFormValidor = new FormValidator(validatorConfig, popupAddCardForm);
 addCardFormValidor.enableValidation();
 

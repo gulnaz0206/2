@@ -1,5 +1,5 @@
 export class Card {
-    constructor(CardData, handleCardClick) { 
+    constructor(CardData, templateSelector, handleCardClick) { 
 
     this._templateSelector = templateSelector;
     this._name = CardData.name;
