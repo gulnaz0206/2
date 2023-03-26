@@ -1,0 +1,33 @@
+.profile__edit-avatar-button {
+    z-index: 0;
+    position: relative;
+    border: none;
+    width: 120px;
+    height: 120px;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile__edit-avatar-button::after {
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../../../images/pencil.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    content: '';
+    transition: opacity 0.3s ease;
+}
+
+.profile__edit-avatar-button:hover::after {
+    opacity: 1;
+}

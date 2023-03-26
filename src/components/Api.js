@@ -29,7 +29,7 @@ export default class Api {
     };
 
     deleteCard(cardId) {
-        return fetch(`${this.url}/cards/${cardId}`, {
+        return fetch(`${this._url}/cards/${cardId}`, {
             method: 'DELETE',
             headers: this._headers,
         }).then((res) => this._addResult(res))

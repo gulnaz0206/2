@@ -1,0 +1,10 @@
+.popup-change-avatar-form{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width:725px) {
+    .popup-change-avatar-form {
+        margin: 27px auto 25px;
+    }
+}

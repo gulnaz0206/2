@@ -8,7 +8,7 @@ export default class Section {
 
     renderItems = (callback) => {
         this._renderedItems.forEach((item) => { 
-            const newElement = this._renderer({name: item.name, link: item.link}, callback)
+            const newElement = this._renderer(item, callback)
             this.addItem(newElement);
         })
     }
