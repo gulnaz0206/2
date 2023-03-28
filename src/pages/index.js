@@ -101,7 +101,7 @@ const submitProfileInfo = (data, setInitialText) => {
     popupProfile.setButtonText('Сохранение...');
     api.editUserInfo(data['popup__name'], data['popup__job'])
         .then((result) => {
-            userInfo.setUseInfo(result.name, result.about);
+            userInfo.setUseInfo(result.name, result.about, result.avatar);
             popupProfile.close();
         })
         .catch((err) => {
